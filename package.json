@@ -1,0 +1,28 @@
+{
+  "name": "hobit_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/core/bot/bot.ts",
+    "dev": "nodemon src/core/bot/bot.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "grammy": "^1.38.4",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.2",
+    "@types/pg": "^8.16.0",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
