@@ -12,9 +12,11 @@ export async function startBot(): Promise<Bot> {
     await ctx.reply(`Ваш chat_id: ${ctx.chat.id}`);
   });
   
+
   console.log('Starting Telegram bot...');
   await bot.start();
   console.log('Telegram bot started');
+  
   
   return bot;
 }
