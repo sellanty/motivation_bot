@@ -3,7 +3,6 @@ import { startBot } from "./core/bot/bot";
 
 async function main() {
   startServer();
-
   await startBot();
 }
 
