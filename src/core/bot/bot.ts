@@ -6,6 +6,12 @@ import { getRandomQuoteObject } from "../../features/motivation/getQuote";
 export async function startBot(): Promise<Bot> {
   const bot = new Bot(process.env.BOT_TOKEN!);
 
+  try {
+    await bot.api.deleteWebhook({ drop_pending_updates: true });
+  } catch (error) {
+    console.log("Вебхук не был установлен");
+  }
+
   bot.command("start", async (ctx) => {
     const username = ctx.from?.username;
     const firstName = ctx.from?.first_name || "пользователь";
@@ -35,8 +41,13 @@ export async function startBot(): Promise<Bot> {
 
   setupDailyQuote(bot);
 
-  await bot.start();
-  
+  await bot.start({
+    drop_pending_updates: true,
+    allowed_updates: ["message", "callback_query"],
+    onStart: (info) => {
+      console.log(`Бот @${info.username} запущен!`);
+    }
+  });
 
   return bot;
 }
