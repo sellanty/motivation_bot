@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && cp -r assets dist/",
+    "build": "tsc && xcopy assets dist\\assets /E /I /Y",
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts"
   },
