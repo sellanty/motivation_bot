@@ -7,7 +7,6 @@ export class PhotoService {
         type, 
         isActive: true 
       },
-      order: [['order', 'ASC']],
     });
     
     if (photos.length === 0) return null;
