@@ -1,6 +1,6 @@
 import { Bot } from "grammy";
 import "dotenv/config";
-import { setupDailyQuote } from "../../features/motivation/senderQuote";
+import { setupDailyInfo} from "../../features/motivation/senderInfo";
 import { getRandomQuoteObject } from "../../features/motivation/getQuote";
 
 export async function startBot(): Promise<Bot> {
@@ -27,6 +27,11 @@ export async function startBot(): Promise<Bot> {
       `📚 Доступные команды:\n/start - Начать\n/help - Помощь\n/quote - Случайная цитата`
     );
   });
+  bot.command("pills", async (ctx) => {
+    await ctx.reply(
+      'pills!'
+    )
+  })
 
   bot.command("quote", async (ctx) => {
     const quoteObj = getRandomQuoteObject();
@@ -39,7 +44,7 @@ export async function startBot(): Promise<Bot> {
     await ctx.reply(message);
   });
 
-  setupDailyQuote(bot);
+  setupDailyInfo(bot);
 
   await bot.start({
     drop_pending_updates: true,
