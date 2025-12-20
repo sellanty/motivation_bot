@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && cp -r assets dist/",
+    "build": "tsc && ncp assets dist/assets",
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts"
   },
@@ -26,6 +26,7 @@
     "@types/node-fetch": "^2.6.13",
     "@types/pg": "^8.16.0",
     "@types/sequelize": "^4.28.20",
+    "ncp": "^2.0.0",
     "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
